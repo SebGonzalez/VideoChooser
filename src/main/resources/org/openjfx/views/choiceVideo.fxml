@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.openjfx.ChoiceVideoController" styleClass="backgroundWhite">
+    <children>
+        <BorderPane fx:id="borderPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0"
+                    VBox.vgrow="ALWAYS">
+
+            <top>
+                <BorderPane>
+                    <left>
+                        <ImageView fitWidth="200" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/fleur.jpg"></Image>
+                            </image>
+                        </ImageView>
+                    </left>
+                    <center>
+                        <HBox alignment="CENTER">
+                            <Label text="C" styleClass="labelChoiceTop, color1"></Label>
+                            <Label text="'" styleClass="labelChoiceTop, color2"></Label>
+                            <Label text="e" styleClass="labelChoiceTop, color3"></Label>
+                            <Label text="s" styleClass="labelChoiceTop, color4"></Label>
+                            <Label text="t" styleClass="labelChoiceTop, color5"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="l" styleClass="labelChoiceTop, color6"></Label>
+                            <Label text="e" styleClass="labelChoiceTop, color7"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="m" styleClass="labelChoiceTop, color8"></Label>
+                            <Label text="o" styleClass="labelChoiceTop, color9"></Label>
+                            <Label text="m" styleClass="labelChoiceTop, color10"></Label>
+                            <Label text="e" styleClass="labelChoiceTop, color11"></Label>
+                            <Label text="n" styleClass="labelChoiceTop, color12"></Label>
+                            <Label text="t" styleClass="labelChoiceTop, color13"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="d" styleClass="labelChoiceTop, color14"></Label>
+                            <Label text="e" styleClass="labelChoiceTop, color15"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="f" styleClass="labelChoiceTop, color16"></Label>
+                            <Label text="a" styleClass="labelChoiceTop, color17"></Label>
+                            <Label text="i" styleClass="labelChoiceTop, color18"></Label>
+                            <Label text="r" styleClass="labelChoiceTop, color19"></Label>
+                            <Label text="e" styleClass="labelChoiceTop, color20"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="u" styleClass="labelChoiceTop, color21"></Label>
+                            <Label text="n" styleClass="labelChoiceTop, color22"></Label>
+                            <Label text=" " styleClass="labelChoiceTop"></Label>
+                            <Label text="c" styleClass="labelChoiceTop, color23"></Label>
+                            <Label text="h" styleClass="labelChoiceTop, color24"></Label>
+                            <Label text="o" styleClass="labelChoiceTop, color25"></Label>
+                            <Label text="i" styleClass="labelChoiceTop, color26"></Label>
+                            <Label text="x" styleClass="labelChoiceTop, color27"></Label>
+                        </HBox>
+                    </center>
+                    <right>
+                        <ImageView fitWidth="200" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/fleur.jpg"></Image>
+                            </image>
+                        </ImageView>
+                    </right>
+                </BorderPane>
+            </top>
+            <center>
+                <GridPane fx:id="gridPane">
+                    <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="0">
+                        <Label fx:id="label1" styleClass="labelChoice" text="Le show de Sopheak"></Label>
+                        <ImageView fx:id="imageView" styleClass="imageChoice" fitWidth="200" preserveRatio="true"/>
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="10" GridPane.columnIndex="1">
+                        <Label fx:id="label2" styleClass="labelChoice" text="La danse de Queen Mel"></Label>
+                        <ImageView fx:id="imageView2" styleClass="imageChoice" fitWidth="200" preserveRatio="true"/>
+                    </VBox>
+                </GridPane>
+            </center>
+
+            <bottom>
+                <HBox alignment="CENTER">
+                    <Label text="Anniversaire" styleClass="labelChoiceBottom"/>
+                    <Label text=" Marion" styleClass="labelChoiceBottom, colorPink"/>
+                    <Label text=" 05/06/2021 - 24 ans" styleClass="labelChoiceBottom"></Label>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</VBox>

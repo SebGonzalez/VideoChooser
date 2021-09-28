@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Regular';
+    src: url('../font/CongratsScript.ttf');
+}
+
+@font-face {
+    font-family: 'Regular';
+    src: url('../font/SFBalloons.ttf');
+}
+
+@font-face {
+    font-family: 'Regular';
+    src: url('../font/KRBirthdayLetters.ttf');
+}
+
+
+.labelChoice {
+    -fx-font-size: 35pt;
+    -fx-font-family: 'Congrats Script';
+}
+
+.labelChoiceBottom {
+    -fx-font-size: 35pt;
+    -fx-font-family: 'SF Balloons';
+    -fx-padding: 0 0 110 0;
+}
+
+.labelChoiceTop {
+    -fx-font-size: 40pt;
+    -fx-font-family: 'KR Birthday Letters';
+    -fx-padding: 50 0 50 0;
+}
+
+.imageChoice {
+    -fx-effect : dropshadow(gaussian, rgba(200, 200, 200, 0.9), 5, 1.0, 0, 0);
+}
+
+.imageChoice:hover {
+    -fx-effect : dropshadow(gaussian, rgba(200, 200, 200, 0.9), 10, 1.0, 0, 0);
+    -fx-opacity : 0.5;
+    -fx-cursor : hand
+}
+
+.color1 {
+    -fx-text-fill: "#E3986E";
+}
+.color2 {
+    -fx-text-fill: "#3587A5";
+}
+.color3 {
+    -fx-text-fill: "#3FF50D";
+}
+.color4 {
+    -fx-text-fill: "#CB862B";
+}
+.color5 {
+    -fx-text-fill: "#FB7368";
+}
+.color6 {
+    -fx-text-fill: "#AE442B";
+}
+.color7 {
+    -fx-text-fill: "#EA379A";
+}
+.color8 {
+    -fx-text-fill: "#203645";
+}
+.color9 {
+    -fx-text-fill: "#76053E";
+}
+.color10 {
+    -fx-text-fill: "#C5AD6C";
+}
+.color11 {
+    -fx-text-fill: "#5AB997";
+}
+.color12 {
+    -fx-text-fill: "#576CC7";
+}
+.color13 {
+    -fx-text-fill: "#C1DFA9";
+}
+.color14 {
+    -fx-text-fill: "#C7AC30";
+}
+.color15 {
+    -fx-text-fill: "#852F6B";
+}
+.color16 {
+    -fx-text-fill: "#3067F7";
+}
+.color17 {
+    -fx-text-fill: "#D28D1B";
+}
+.color18 {
+    -fx-text-fill: "#12B189";
+}
+.color19 {
+    -fx-text-fill: "#9EBC23";
+}
+.color20 {
+    -fx-text-fill: "#3DED3E";
+}
+.color21 {
+    -fx-text-fill: "#B1464C";
+}
+.color22 {
+    -fx-text-fill: "#32CE7F";
+}
+.color23 {
+    -fx-text-fill: "#537FA2";
+}
+.color24 {
+    -fx-text-fill: "#C95C06";
+}
+.color25 {
+    -fx-text-fill: "#6C9CA3";
+}
+.color26 {
+    -fx-text-fill: "#06A5E3";
+}
+.color27 {
+    -fx-text-fill: "#900015";
+}
+.colorPink {
+    -fx-text-fill: "#F8666D";
+}
+.backgroundWhite {
+    -fx-background-color : "white";
+}

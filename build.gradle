@@ -1,0 +1,47 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'org.beryx.runtime' version '1.12.3'
+}
+
+group 'org.openjfx'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = 17
+    modules = ['javafx.controls', 'javafx.graphics', 'javafx.media', 'javafx.fxml', 'javafx.web', 'javafx.swing']
+}
+
+jar {
+    enabled = true
+}
+
+mainClassName = "org.openjfx.Main2"
+
+runtime {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+
+    targetPlatform("win", "$rootDir/jdk/jdk-17")
+
+    jpackage {
+        skipInstaller = true
+        targetPlatformName = "win"
+        jpackageHome = "$rootDir/jdk/jdk-17"
+        def imgType = targetPlatformName == "win" ? 'ico' : targetPlatformName == "mac" ? 'icns' : 'png'
+        imageOptions  = ['--icon', "$rootDir\\ico.ico"]
+        installerOptions += ['--resource-dir', "src/main/resources"]
+
+        if(targetPlatformName == "win") {
+            installerOptions += [/*'--win-per-user-install',*/ '--win-dir-chooser', '--win-menu', '--win-shortcut']
+        }
+        else if (targetPlatformName == "lin") {
+            installerOptions += ['--linux-package-name', 'hellofx','--linux-shortcut']
+        }
+        else if (targetPlatformName == "mac") {
+            installerOptions += ['--mac-package-name', 'hellofx']
+        }
+    }
+}
