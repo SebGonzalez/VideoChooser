@@ -4,7 +4,7 @@
 
 ## Video Chooser using JavaFX ##
 
-Javafx program use for create a video chooser. User have a choice between two video and select one of them
+Javafx program use for create a video chooser. Users have a choice between two videos and they can select one of them
 
 
 ### Usage
