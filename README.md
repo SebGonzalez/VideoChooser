@@ -2,41 +2,10 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/beryx-gist/badass-jlink-example-log4j2-javafx/blob/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/beryx-gist/badass-jlink-example-log4j2-javafx/master.svg?label=Build)](https://travis-ci.org/beryx-gist/badass-jlink-example-log4j2-javafx)
 
-## Badass JLink Plugin Example: log4j2 and JavaFX ##
+## Video Chooser using JavaFX ##
 
-A small JavaFX application using log4j2 that shows how to use the [Badass JLink Plugin](https://github.com/beryx/badass-jlink-plugin/).
+Javafx program use for create a video chooser. User have a choice between two video and select one of them
 
-The plugin is configured in `build.gradle` as follows:
-
-```
-plugins {
-    id 'application'
-    id 'org.openjfx.javafxplugin' version '0.0.5'
-    id 'org.beryx.jlink' version '2.1.9'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile 'org.apache.logging.log4j:log4j-core:2.11.1'
-}
-
-javafx {
-    modules = ['javafx.controls']
-}
-
-mainClassName = "hellofx/org.openjfx.Main"
-
-jlink {
-    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
-    launcher {
-        name = 'helloFX'
-    }
-    forceMerge('log4j-api')
-}
-```
 
 ### Usage
 **Running with gradle:**
@@ -44,10 +13,10 @@ jlink {
 ./gradlew run
 ```
 
-A window containing the text `HelloFX` should appear on the screen and the following text should be printed on the console:
-```
-[JavaFX Application Thread] INFO  org.openjfx.Main - hellofx!
-```
+A window containing home background appears.
+
+A click launch the introduction video.
+After that two choice is possible. When clicking on image the selected video start and etc until finishing.
 
 
 **Creating and executing a custom runtime image:**
@@ -55,11 +24,6 @@ A window containing the text `HelloFX` should appear on the screen and the follo
 ./gradlew jlink
 cd build/image/bin
 ./helloFX
-```
-
-A window containing the text `HelloFX` should appear on the screen and the following text should be printed on the console:
-```
-[JavaFX Application Thread] INFO  org.openjfx.Main - hellofx!
 ```
 
 
