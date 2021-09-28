@@ -2,29 +2,18 @@ package org.openjfx;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.util.Duration;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ChoiceVideoController {
 
-    //@FXML MediaView mediaView1;
-    // @FXML MediaView mediaView2;
     @FXML GridPane gridPane;
     @FXML ImageView imageView;
     @FXML ImageView imageView2;
@@ -43,9 +32,6 @@ public class ChoiceVideoController {
         titles.put(6, new String[]{"La danse sautillante", "La choregraphique synchronisee"});
         titles.put(7, new String[]{"La visite dans la serre", "Autre chose qui n'a rien à voir"});
         titles.put(8, new String[]{"Le show de la pomme magique", "La date en rap"});
-    }
-
-    public ChoiceVideoController() {
     }
 
     @FXML
@@ -73,10 +59,10 @@ public class ChoiceVideoController {
             fadeTransition.setNode(imageView.getScene().getRoot());
             fadeTransition.setToValue(0);
             fadeTransition.setFromValue(1);
-            fadeTransition.setOnFinished(event1 -> Main.switchToVideo(step, 1));
+            fadeTransition.setOnFinished(event1 -> MainApplication.switchToVideo(step, 1));
             fadeTransition.play();
         });
-        imageView2.setOnMouseClicked(event -> Main.switchToVideo(step, 2));
+        imageView2.setOnMouseClicked(event -> MainApplication.switchToVideo(step, 2));
 
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(1000));

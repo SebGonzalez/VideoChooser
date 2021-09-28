@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class Main extends Application {
+public class MainApplication extends Application {
     private static final String CHOICE_PANEL = "choice_panel";
     private static final String VIDEO_PANEL = "video_panel";
     private static HashMap<String, FXMLLoader> screenMap = new HashMap<>();
@@ -39,7 +39,7 @@ public class Main extends Application {
 
     public static void switchToChoice(int step) {
         if(!screenMap.containsKey(CHOICE_PANEL)) {
-            screenMap.put(CHOICE_PANEL,  new FXMLLoader(Main.class.getResource("views/choiceVideo.fxml")));
+            screenMap.put(CHOICE_PANEL,  new FXMLLoader(MainApplication.class.getResource("views/choiceVideo.fxml")));
             try {
                 scene.setRoot(screenMap.get(CHOICE_PANEL).load());
             } catch (IOException e) {
@@ -53,7 +53,7 @@ public class Main extends Application {
     }
     public static void switchToVideo(int step, int choice) {
         if(!screenMap.containsKey(VIDEO_PANEL)) {
-            screenMap.put(VIDEO_PANEL,  new FXMLLoader(Main.class.getResource("views/videoPlayer.fxml")));
+            screenMap.put(VIDEO_PANEL,  new FXMLLoader(MainApplication.class.getResource("views/videoPlayer.fxml")));
             try {
                 scene.setRoot(screenMap.get(VIDEO_PANEL).load());
             } catch (IOException e) {
@@ -67,7 +67,7 @@ public class Main extends Application {
 
     public static void switchToIntro(int step) {
         if(!screenMap.containsKey(VIDEO_PANEL)) {
-            screenMap.put(VIDEO_PANEL,  new FXMLLoader(Main.class.getResource("views/videoPlayer.fxml")));
+            screenMap.put(VIDEO_PANEL,  new FXMLLoader(MainApplication.class.getResource("views/videoPlayer.fxml")));
             try {
                 scene.setRoot(screenMap.get(VIDEO_PANEL).load());
             } catch (IOException e) {

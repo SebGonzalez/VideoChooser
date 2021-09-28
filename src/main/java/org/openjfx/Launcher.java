@@ -2,8 +2,8 @@ package org.openjfx;
 
 import javafx.application.Application;
 
-public class Main2 {
+public class Launcher {
     public static void main(String[] args) {
-        Application.launch(Main.class, args);
+        Application.launch(MainApplication.class, args);
     }
 }

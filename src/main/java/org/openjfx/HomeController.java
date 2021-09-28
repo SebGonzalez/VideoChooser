@@ -4,7 +4,6 @@ import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.util.Duration;
 
 public class HomeController {
@@ -23,7 +22,7 @@ public class HomeController {
             fadeTransition.setNode(imageView.getScene().getRoot());
             fadeTransition.setToValue(0);
             fadeTransition.setFromValue(1);
-            fadeTransition.setOnFinished(event1 -> Main.switchToIntro(1));
+            fadeTransition.setOnFinished(event1 -> MainApplication.switchToIntro(1));
             fadeTransition.play();
         });
     }

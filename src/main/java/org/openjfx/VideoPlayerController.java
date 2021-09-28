@@ -1,7 +1,6 @@
 package org.openjfx;
 
 import javafx.animation.FadeTransition;
-import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.KeyCode;
@@ -31,10 +30,6 @@ public class VideoPlayerController {
         mediaView.setFitWidth(width);
         mediaView.setFitHeight(height);
 
-       /* DropShadow dropshadow = new DropShadow();
-        dropshadow.setOffsetY(5.0);
-        dropshadow.setOffsetX(5.0);
-        mediaView.setEffect(dropshadow);*/
         anchorePane.getChildren().setAll(mediaView);
 
         mediaPlayer.setOnEndOfMedia(() -> {
@@ -108,7 +103,7 @@ public class VideoPlayerController {
         fadeTransition.setNode(anchorePane);
         fadeTransition.setToValue(0);
         fadeTransition.setFromValue(1);
-        fadeTransition.setOnFinished(event1 -> Main.switchToIntro(step + 1));
+        fadeTransition.setOnFinished(event1 -> MainApplication.switchToIntro(step + 1));
         fadeTransition.play();
     }
 
@@ -118,7 +113,7 @@ public class VideoPlayerController {
         fadeTransition.setNode(anchorePane);
         fadeTransition.setToValue(0);
         fadeTransition.setFromValue(1);
-        fadeTransition.setOnFinished(event1 -> Main.switchToChoice(step));
+        fadeTransition.setOnFinished(event1 -> MainApplication.switchToChoice(step));
         fadeTransition.play();
     }
 

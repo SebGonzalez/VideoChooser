@@ -19,7 +19,7 @@ jar {
     enabled = true
 }
 
-mainClassName = "org.openjfx.Main2"
+mainClassName = "org.openjfx.Launcher"
 
 runtime {
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
