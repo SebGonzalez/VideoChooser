@@ -17,6 +17,9 @@ choiceNumbers = 2 //The number of choice
 video.1.1 = Title video 1
 video.1.2 = Title video 2
 
+video.2.1 = Title video 1
+video.2.2 = Title video 2
+
 etc ...
 ```
 
