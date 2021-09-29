@@ -19,6 +19,10 @@ jar {
     enabled = true
 }
 
+/*dependencies {
+    implementation files('libs/scenicview.jar')
+}*/
+
 mainClassName = "org.openjfx.Launcher"
 
 runtime {

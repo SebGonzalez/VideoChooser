@@ -9,8 +9,11 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+
+import static org.openjfx.MainApplication.PATH_TO_IMAGES;
 
 public class ChoiceVideoController {
 
@@ -19,20 +22,6 @@ public class ChoiceVideoController {
     @FXML ImageView imageView2;
     @FXML Label label1;
     @FXML Label label2;
-
-    private static final Map<Integer, String[]> titles;
-
-    static {
-        titles = new HashMap<>();
-        titles.put(1, new String[]{"DJ Mira", "Jeu de mots Mira"});
-        titles.put(2, new String[]{"Ribambelle de blagues", "Ce reve bleu"});
-        titles.put(3, new String[]{"Les retrouvailles de guigui (avec Marion)", "La suprise (à ne pas choisir)"});
-        titles.put(4, new String[]{"La video de Sainz", "La video d'Alicia"});
-        titles.put(5, new String[]{"Les checks originaux de Sopheak", "La tentative de seduction"});
-        titles.put(6, new String[]{"La danse sautillante", "La choregraphique synchronisee"});
-        titles.put(7, new String[]{"La visite dans la serre", "Autre chose qui n'a rien à voir"});
-        titles.put(8, new String[]{"Le show de la pomme magique", "La date en rap"});
-    }
 
     @FXML
     public void initialize() {
@@ -44,14 +33,14 @@ public class ChoiceVideoController {
     }
 
     public void fitImage(int step, double width) {
-        label1.setText(titles.get(step)[0]);
-        label2.setText(titles.get(step)[1]);
+        label1.setText(MainApplication.configurationLoader.getTitle(step, 1));
+        label2.setText(MainApplication.configurationLoader.getTitle(step, 2));
 
         imageView.setFitWidth(width / 2 - 50);
         imageView2.setFitWidth(width / 2 - 50);
 
-        imageView.setImage(new Image(getClass().getResource(("images/" + step + "_1.png")).toExternalForm()));
-        imageView2.setImage(new Image(getClass().getResource(("images/" + step + "_2.png")).toExternalForm()));
+        imageView.setImage(new Image(new File(PATH_TO_IMAGES + step + "_1.png").toURI().toString()));
+        imageView2.setImage(new Image(new File(PATH_TO_IMAGES + step + "_2.png").toURI().toString()));
 
         imageView.setOnMouseClicked(event -> {
             FadeTransition fadeTransition = new FadeTransition();

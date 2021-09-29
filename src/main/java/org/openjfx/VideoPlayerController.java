@@ -14,16 +14,11 @@ import java.io.File;
 
 public class VideoPlayerController {
 
-    private static String PATH_TO_VIDEO = "app/videos/";
-
     @FXML
     AnchorPane anchorePane;
 
-    public VideoPlayerController() {
-    }
-
     public void loadVideo(int step, int choice, double width, double height) {
-        String path = PATH_TO_VIDEO + "video_" + step + "_" + choice + ".mp4";
+        String path = MainApplication.PATH_TO_VIDEO + "video_" + step + "_" + choice + ".mp4";
         Media media = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         MediaView mediaView = new MediaView(mediaPlayer);
@@ -57,7 +52,7 @@ public class VideoPlayerController {
     }
 
     public void loadintro(int step, double width, double height) {
-        String path = PATH_TO_VIDEO + "intro_" + step + ".mp4";
+        String path = MainApplication.PATH_TO_VIDEO + "intro_" + step + ".mp4";
         Media media = new Media(new File(path).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         MediaView mediaView = new MediaView(mediaPlayer);
@@ -71,19 +66,25 @@ public class VideoPlayerController {
         anchorePane.getChildren().setAll(mediaView);
 
         mediaPlayer.setOnEndOfMedia(() -> {
-            if (step != 9) {
-                mediaPlayer.dispose();
+            mediaPlayer.dispose();
+
+            if (step <= MainApplication.configurationLoader.getInteger(ConfigurationLoader.CHOICE_NUMBERS, 0)) {
                 switchToChoice(step);
+            } else {
+                switchToHome();
             }
         });
 
         mediaView.requestFocus();
         mediaView.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.S) {
-                if (step != 9) {
-                    mediaPlayer.stop();
-                    mediaPlayer.dispose();
+                mediaPlayer.stop();
+                mediaPlayer.dispose();
+
+                if (step <= MainApplication.configurationLoader.getInteger(ConfigurationLoader.CHOICE_NUMBERS, 0)) {
                     switchToChoice(step);
+                } else {
+                    switchToHome();
                 }
             }
         });
@@ -117,5 +118,13 @@ public class VideoPlayerController {
         fadeTransition.play();
     }
 
-
+    public void switchToHome() {
+        FadeTransition fadeTransition = new FadeTransition();
+        fadeTransition.setDuration(Duration.millis(1000));
+        fadeTransition.setNode(anchorePane);
+        fadeTransition.setToValue(0);
+        fadeTransition.setFromValue(1);
+        fadeTransition.setOnFinished(event1 -> MainApplication.switchToHome());
+        fadeTransition.play();
+    }
 }

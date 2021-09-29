@@ -6,6 +6,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
+import java.io.File;
+
+import static org.openjfx.MainApplication.PATH_TO_IMAGES;
+
 public class HomeController {
 
     @FXML
@@ -13,8 +17,8 @@ public class HomeController {
 
     @FXML
     public void initialize() {
-        imageView.setImage(new Image(getClass().getResource(("images/home_background.png")).toExternalForm()));
         imageView.getStyleClass().setAll("home");
+        imageView.setImage(new Image(new File(PATH_TO_IMAGES + "home_background.png").toURI().toString()));
 
         imageView.setOnMouseClicked(event -> {
             FadeTransition fadeTransition = new FadeTransition();
