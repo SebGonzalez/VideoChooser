@@ -10,14 +10,15 @@ Javafx program use for create a video chooser. Users have a choice between two v
 
 Create dir app/externalResources near to the exe and put config.properties file which contains :
 
-#Number of choice
-choiceNumbers = 2
+```
+choiceNumbers = 2 //The number of choice
 
-#List title of videos
+//List titles of videos
 video.1.1 = Title video 1
 video.1.2 = Title video 2
 
 etc ...
+```
 
 Put images of choices in "images" folder and videos in "videos" folder.
 
