@@ -6,6 +6,20 @@
 
 Javafx program use for create a video chooser. Users have a choice between two videos and they can select one of them
 
+### Configuration
+
+Create dir app/externalResources near to the exe and put config.properties file which contains :
+
+#Number of choice
+choiceNumbers = 2
+
+#List title of videos
+video.1.1 = Title video 1
+video.1.2 = Title video 2
+
+etc ...
+
+Put images of choices in "images" folder and videos in "videos" folder.
 
 ### Usage
 **Running with gradle:**
